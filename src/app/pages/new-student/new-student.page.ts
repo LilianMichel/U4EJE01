@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+
 import { FormGroup, FormBuilder } from '@angular/forms';
 
-import { Estudiante } from '../models/estudiante';
-import { EstudianteService } from '../services/estudiante.service';
+import { Estudiante } from '../../models/estudiante';
+import { EstudianteService } from '../../services/estudiante.service';
+
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-new-student',
+  templateUrl: './new-student.page.html',
+  styleUrls: ['./new-student.page.scss'],
 })
-export class HomePage implements OnInit {
-  
+export class NewStudentPage implements OnInit {
+
   public myForm: FormGroup;
   public student: Estudiante;
   constructor(private studentService:EstudianteService, private fb:FormBuilder) { }
@@ -35,5 +37,6 @@ export class HomePage implements OnInit {
     }
     this.studentService.createStudent(this.student);
   }
+
 
 }
